@@ -13,8 +13,12 @@ public class Player extends BorderPane{
 	MediaView view;
 	Pane mpane;
 	MediaBar bar;
+
+	public Player(){
+		
+	}
 	
-	public Player (String fileName){
+	public Player(String fileName){
 		
 		media = new Media(fileName);
 		player = new MediaPlayer(media);
