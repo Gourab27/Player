@@ -18,7 +18,7 @@ public class Player extends BorderPane{
 		
 	}
 	
-	public Player(String fileName){
+	public Player (String fileName){
 		
 		media = new Media(fileName);
 		player = new MediaPlayer(media);

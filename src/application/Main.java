@@ -18,6 +18,7 @@ public class Main extends Application {
 	
 	Player player;
 	FileChooser fileChooser;
+	MenuBar menuBar;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -25,7 +26,7 @@ public class Main extends Application {
 		//Add menu bar to open file
 		MenuItem open = new MenuItem("Open");
 		Menu menuFile = new Menu("File");
-		MenuBar menuBar = new MenuBar();
+		menuBar = new MenuBar();
 		
 		menuFile.getItems().add(open);
 		menuBar.getMenus().add(menuFile);
@@ -34,15 +35,13 @@ public class Main extends Application {
 		
 		open.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent e){
-				if (player.player != null)
-					player.player.pause();
 				File file = fileChooser.showOpenDialog(primaryStage);
 				if (file != null){
 					try {
+						System.out.println(file.toURI().toURL().toExternalForm());
 						player = new Player(file.toURI().toURL().toExternalForm());
 						Scene scene = new Scene(player, 720, 480, Color.BLACK);
 						primaryStage.setScene(scene);
-						primaryStage.show();
 					} catch (MalformedURLException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -52,13 +51,10 @@ public class Main extends Application {
 			}
 		});
 		
-		
-		
-		
 		//System.out.println(System.getProperty("user.dir"));
 		player = new Player();
 		player.setTop(menuBar);					 //Set bar at the top
-		Scene scene = new Scene(player, 720, 480, Color.BLACK);
+		Scene scene = new Scene(player, 720, 530, Color.BLACK);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
