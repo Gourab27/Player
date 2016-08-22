@@ -56,6 +56,7 @@ public class Main extends Application {
 		player.setTop(menuBar);					 //Set bar at the top
 		Scene scene = new Scene(player, 720, 530, Color.BLACK);
 		primaryStage.setScene(scene);
+		primaryStage.setTitle("RRPlayer");
 		primaryStage.show();
 	}
 	
