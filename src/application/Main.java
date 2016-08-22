@@ -38,7 +38,7 @@ public class Main extends Application {
 				File file = fileChooser.showOpenDialog(primaryStage);
 				if (file != null){
 					try {
-						System.out.println(file.toURI().toURL().toExternalForm());
+						//System.out.println(file.toURI().toURL().toExternalForm());
 						player = new Player(file.toURI().toURL().toExternalForm());
 						Scene scene = new Scene(player, 720, 520, Color.BLACK);
 						primaryStage.setScene(scene);

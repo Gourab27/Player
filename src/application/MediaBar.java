@@ -39,6 +39,7 @@ public class MediaBar extends HBox{
 		
 		playButton.setPrefWidth(30);
 		
+		//These have to be in order
 		getChildren().add(playButton);
 		getChildren().add(time);
 		getChildren().add(volume);

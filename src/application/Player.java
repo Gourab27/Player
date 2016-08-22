@@ -1,7 +1,5 @@
 package application;
 
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.DoubleProperty;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
@@ -35,6 +33,7 @@ public class Player extends BorderPane{
 		bar = new MediaBar(player);
 		setBottom(bar);
 		
+		//TODO: resize automatically
 		view.setFitHeight(520);
 		view.setFitWidth(720);
 		
