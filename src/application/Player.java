@@ -1,5 +1,7 @@
 package application;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.DoubleProperty;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
@@ -23,6 +25,7 @@ public class Player extends BorderPane{
 		media = new Media(fileName);
 		player = new MediaPlayer(media);
 		view = new MediaView(player);
+		mpane = new Pane();
 		
 		//Add the view to the pane and center pane
 		mpane.getChildren().add(view);
@@ -32,6 +35,14 @@ public class Player extends BorderPane{
 		bar = new MediaBar(player);
 		setBottom(bar);
 		
+		view.setFitHeight(520);
+		view.setFitWidth(720);
+		
+		//DoubleProperty mvw = view.fitWidthProperty();
+		//DoubleProperty mvh = view.fitHeightProperty();
+		//mvw.bind(Bindings.selectDouble(view.sceneProperty(), "width"));
+		//mvh.bind(Bindings.selectDouble(view.sceneProperty(), "height"));
+		view.setPreserveRatio(true);
 		player.play();
 		
 	}

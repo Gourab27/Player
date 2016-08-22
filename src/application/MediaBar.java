@@ -17,8 +17,8 @@ import javafx.scene.media.MediaPlayer.Status;
 
 public class MediaBar extends HBox{
 	
-	Slider vol;
-	Slider time;
+	Slider vol = new Slider();
+	Slider time = new Slider();
 	
 	Button playButton = new Button("||");
 	
@@ -39,10 +39,10 @@ public class MediaBar extends HBox{
 		
 		playButton.setPrefWidth(30);
 		
-		getChildren().add(vol);
-		getChildren().add(time);
 		getChildren().add(playButton);
+		getChildren().add(time);
 		getChildren().add(volume);
+		getChildren().add(vol);
 		
 		playButton.setOnAction(new EventHandler<ActionEvent>(){
 			public void handle(ActionEvent e){

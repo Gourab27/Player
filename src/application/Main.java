@@ -40,7 +40,7 @@ public class Main extends Application {
 					try {
 						System.out.println(file.toURI().toURL().toExternalForm());
 						player = new Player(file.toURI().toURL().toExternalForm());
-						Scene scene = new Scene(player, 720, 480, Color.BLACK);
+						Scene scene = new Scene(player, 720, 520, Color.BLACK);
 						primaryStage.setScene(scene);
 					} catch (MalformedURLException e1) {
 						// TODO Auto-generated catch block
